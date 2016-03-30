@@ -1,0 +1,27 @@
+﻿生成启动时间为 2016/3/8 20:13:21。
+     1>项目“E:\C源文件\WC\WC\WC.vcxproj”在节点 2 上(build 个目标)。
+     1>InitializeBuildStatus:
+         正在创建“Release\WC.unsuccessfulbuild”，因为已指定“AlwaysCreate”。
+       ClCompile:
+         d:\程序员\VS2010\VC\bin\CL.exe /c /Zi /nologo /W3 /WX- /O2 /Oi /Oy- /GL /D _MBCS /Gm- /EHsc /MD /GS /Gy /fp:precise /Zc:wchar_t /Zc:forScope /Fo"Release\\" /Fd"Release\vc100.pdb" /Gd /TP /analyze- /errorReport:prompt WC.cpp
+         WC.cpp
+     1>WC.cpp(80): warning C4018: “<”: 有符号/无符号不匹配
+     1>WC.cpp(139): warning C4018: “<”: 有符号/无符号不匹配
+     1>WC.cpp(220): warning C4018: “<”: 有符号/无符号不匹配
+     1>WC.cpp(367): warning C4018: “<”: 有符号/无符号不匹配
+       Link:
+         d:\程序员\VS2010\VC\bin\link.exe /ERRORREPORT:PROMPT /OUT:"E:\C源文件\WC\Release\WC.exe" /NOLOGO kernel32.lib user32.lib gdi32.lib winspool.lib comdlg32.lib advapi32.lib shell32.lib ole32.lib oleaut32.lib uuid.lib odbc32.lib odbccp32.lib /MANIFEST /ManifestFile:"Release\WC.exe.intermediate.manifest" /MANIFESTUAC:"level='asInvoker' uiAccess='false'" /DEBUG /PDB:"E:\C源文件\WC\Release\WC.pdb" /OPT:REF /OPT:ICF /LTCG /TLBID:1 /DYNAMICBASE /NXCOMPAT /IMPLIB:"E:\C源文件\WC\Release\WC.lib" /MACHINE:X86 Release\WC.obj
+         正在生成代码
+     1>e:\c源文件\wc\wc\wc.cpp(229): warning C4715: “SA::nullCount”: 不是所有的控件路径都返回值
+         已完成代码的生成
+         WC.vcxproj -> E:\C源文件\WC\Release\WC.exe
+       Manifest:
+         C:\Program Files (x86)\Microsoft SDKs\Windows\v7.0A\bin\mt.exe /nologo /verbose /outputresource:"E:\C源文件\WC\Release\WC.exe;#1" /manifest Release\WC.exe.intermediate.manifest
+       FinalizeBuildStatus:
+         正在删除文件“Release\WC.unsuccessfulbuild”。
+         正在对“Release\WC.lastbuildstate”执行 Touch 任务。
+     1>已完成生成项目“E:\C源文件\WC\WC\WC.vcxproj”(build 个目标)的操作。
+
+生成成功。
+
+已用时间 00:00:02.70
