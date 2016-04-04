@@ -1,0 +1,50 @@
+<extend name="Base/common"/>
+<block name="style">
+<link href="__CSS__/event.css" rel="stylesheet" type="text/css" />
+</block>
+<block name="body">
+<div id="frm-post-popup " class="white-popup1 boxShadowBorder col-xs-12"
+	style="padding-bottom:20px">
+	<div class="clearfix" style="margin:10px;">
+	   	<form class="eventSearchForm" action="{:U('index')}" method="post">
+           <input name="keyword" class="form-control" type="text" value="{$keyword}" placeholder="{:L('关键字')}" />
+           <input type="submit" class="btn btn-primary" value="{:L('搜索')}"/>
+        </form>	
+    </div>
+	<div class="attend-title">
+			<div class="attend" style="width: 15%;">{:L('教师姓名')}</div>
+			<div class="attend" style="width: 50%;">{:L('平均分')}</div>
+	</div>
+	<volist name="teacheres" id="teacher"> 
+		<div style="width:99%;">
+				<div class="attend" style="width: 15%;">{$teacher['username']}</div>
+				<div class="attend" style="width: 50%;">{$teacher['point']}</div>
+				<div style="float:right">
+					<php>if($teacher['appraise']==1){</php>
+					<a href="{:U('chooselesson',array('teacherId'=>$teacher['id']))}"
+						class="btn btn-primary attend-btn">{:L('评价')}</a> 
+					<php>}</php>
+					<a href="{:U('view',array('id'=>$teacher['id']))}"
+						class="btn btn-default attend-btn" >{:L('查看评价')}</a>
+				</div>
+		</div>
+		<hr style="width:99%;background: lightgray;"/>
+		</volist>
+		<div>
+            <div class="pull-right">
+
+                {:getPagination($totalPageCount,15)}
+            </div>
+        </div>
+</div>
+</block>
+
+
+
+
+
+
+
+
+
+
