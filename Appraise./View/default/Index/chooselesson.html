@@ -1,0 +1,53 @@
+<extend name="Base/common" />
+
+<block name="style">
+<link href="__CSS__/event.css" rel="stylesheet" type="text/css" />
+</block>
+<block name="body">
+<div id="frm-post-popup " class="white-popup1 boxShadowBorder col-xs-12"
+	style="padding-bottom:20px">
+	<div style="font-size: 18px; padding: 10px 0 10px 20px;">
+		{:L('请选择课程')}
+	</div>
+	<div class="clearfix"></div>
+	<div class="word-wrap detail"
+		style="padding: 5px 20px 10px 20px; color: #848484">
+		<table id="table-data"
+			class="table table-bordered table-striped table-hover">
+			<!-- 表头 -->
+			<thead>
+				<tr>
+					<th>{:L('课程名称')}</th>
+					<th>{:L('评价时间段')}</th>
+					<th></th>
+				</tr>
+			</thead>
+			<tbody>
+				<volist name="lessons" id="lesson">
+				<tr>
+					<td>{$lesson.title}</td>
+					<td>{$lesson.sTime|date='Y-m-d',###}-{$lesson.eTime|date='Y-m-d',###}</td>
+					<td><a
+						href="{:U('Appraise/Index/appraise',array('teacherId'=>$teacherId,'sessionId'=>$lesson['sessionId']))}"
+						class="btn btn-default">{:L('评价')}</a></td>
+				</tr>
+				</volist>
+			</tbody>
+		</table>
+	</div>
+	<div class="col-xs-8">
+       <button onclick="history.go(-1);" class="btn btn-default "  style="padding: 5px 20px 5px 32px;letter-spacing: 12px;font-size: 14px;margin-left: 500px;">{:L('_RETURN_')}
+       </button>
+    </div>
+</div>
+</block>
+
+
+
+
+
+
+
+
+
+
