@@ -1,0 +1,41 @@
+<extend name="Base/common"/>
+<block name="style">
+<link href="__CSS__/event.css" rel="stylesheet" type="text/css" />
+</block>
+<block name="body">
+<div id="frm-post-popup " class="white-popup1 boxShadowBorder col-xs-12"
+	style="padding-bottom:20px">
+	<h2>{$teacher}{:L('的评价')}</h2>
+	<div class="attend-title">
+			<div class="attend" style="width: 15%;">{:L('学生姓名')}</div>
+			<div class="attend" style="width: 40%;">{:L('内容')}</div>
+			<div class="attend" style="width: 25%;">{:L('星级')}</div>
+			<div class="attend">{:L('时间')}</div>
+	</div>
+	<volist name="appraises" id="appraise"> 
+		<div style="width:99%;">
+				<div class="attend" style="width: 15%;">{$appraise['studentName']}</div>
+				<div class="attend" style="width: 40%;">{$appraise['content']}</div>
+				<div class="attend" style="width: 25%;">{$appraise['point']}</div>
+				<div class="attend">{:date('Y-m-d',$appraise['createTime'])}</div>
+		</div>
+		<hr style="width:99%;background: lightgray;"/>
+		</volist>
+		<div>
+            <div class="pull-right">
+
+                {:getPagination($totalPageCount,15)}
+            </div>
+        </div>
+</div>
+</block>
+
+
+
+
+
+
+
+
+
+

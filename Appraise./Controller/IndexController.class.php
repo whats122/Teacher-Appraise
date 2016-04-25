@@ -151,17 +151,13 @@ class IndexController extends Controller
             {
                 if($k['sTime']<=NOW_TIME && NOW_TIME<=$k['eTime'])
                 {
-                    $appraise=M('Appraise')->where(array('sessionId'=>$k['id'],'teacherId'=>$teacherId,'studentId'=>$uid))->find();
-                    if(!$appraise)
-                    {
-                        $lessons[$i]['lessonId']=$v['id'];
-                        $lessons[$i]['title']=$v['title'];
-                        $lessons[$i]['sessionId']=$k['id'];
-                        $lessons[$i]['sTime']=$k['sTime'];
-                        $lessons[$i]['eTime']=$k['eTime'];
-                        $i++;
-                        break;
-                    }
+                    $lessons[$i]['lessonId']=$v['id'];
+                    $lessons[$i]['title']=$v['title'];
+                    $lessons[$i]['sessionId']=$k['id'];
+                    $lessons[$i]['sTime']=$k['sTime'];
+                    $lessons[$i]['eTime']=$k['eTime'];
+                    $i++;
+                    break;
                 }
             }
             unset($k);

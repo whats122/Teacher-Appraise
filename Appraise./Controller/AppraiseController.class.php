@@ -292,11 +292,11 @@ class AppraiseController extends AdminController
         }
         else{
             $teacherLessonIds=M('AppraiseTeacherLesson')->where(array('uid'=>$uid))->getField('lessonId',true);
-            if(!$teacherLessonIds)
-            {
-                $teacherLessonIds='0';
-            }
             $lesson=M('AppraiseLesson');
+			if(!$teacherLessonIds)
+			{
+				$teacherLessonIds='0';
+			}
             $lessonInfo=$lesson->where(array('title'=>array('like', '%' . $title . '%'),'id'=>array('not in',$teacherLessonIds)))->page($page, $r)->select();
             $totalCount = $lesson->where(array('title'=>array('like', '%' . $title . '%'),'id'=>array('not in',$teacherLessonIds)))->count();
             //显示页面

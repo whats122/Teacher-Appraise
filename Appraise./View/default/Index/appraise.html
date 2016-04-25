@@ -1,0 +1,77 @@
+<extend name="Base/common"/>
+<block name="style">
+    <link href="__CSS__/event.css" rel="stylesheet" type="text/css"/>
+    <link href="__ZUI__/lib/datetimepicker/datetimepicker.min.css" rel="stylesheet" type="text/css">
+</block>
+
+<block name="body">
+    <div id="frm-post-popup " class="white-popup1 boxShadowBorder col-xs-12" style="">
+        <h2>{:L('对老师的评价')}</h2>
+
+ 				<div style="padding: 0 10px;">
+                    <form class="form-horizontal ajax-form" role="form" action="{:U('Appraise/Index/doPost')}"
+                          method="post">
+					<div class="form-group  has-feedback">
+                            <label for="point" class="control-label">{:L('级别')}</label>
+                            <div class="col-xs-10">
+	                            <input id="point_goog" name="point" value="1" type="radio"/>{:L('好评')} &nbsp;&nbsp;&nbsp;&nbsp;
+	               				<input id="point_middle" name="point" value="2" type="radio" checked/>{:L('中评')}&nbsp;&nbsp;&nbsp;&nbsp;
+	               				<input id="point_bad" name="point" value="3" type="radio" checked/>{:L('差评')}
+                            </div>
+                        </div>
+
+                        <div class="form-group  has-feedback">
+                            <label class="control-label">{:L('评价内容')}</label>
+
+                            <div class="col-xs-10">
+                                <textarea id="content" name="content" value="" rows="4" cols="25" style="height: 400px;width: 500px"></textarea>
+                            </div>
+                        </div>
+						<div class="form-group  has-feedback">
+                            <label for="point" class="control-label">{:L('匿名')}</label>
+                            <div class="col-xs-10">
+	                            <input id="anonymous" name="anonymous" value="" type="checkbox"/>
+                            </div>
+                        </div>
+						<div class="form-group">
+							<input type="hidden" name="teacherId" id="teacherId" value="{$teacherId}"/>
+                            <input type="hidden" name="sessionId" id="sessionId" value="{$sessionId}"/>
+						</div>
+                        <div class="form-group  has-feedback">
+                            <div class="col-xs-2" style="margin-left: 150px;">
+                                <button type="submit" class="btn btn-primary " href="{:U('Appraise/Index/doPost')}" 
+								style="padding: 5px 20px 5px 32px;letter-spacing: 12px;font-size: 14px;">{:L('_SUBMIT_')}
+                                </button>
+
+                            </div>
+                            <div class="col-xs-8">
+                                <button onclick="history.go(-1);" class="btn btn-default "  style="padding: 5px 20px 5px 32px;letter-spacing: 12px;font-size: 14px;">{:L('_RETURN_')}
+                                </button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+ 
+</block>
+<block name="script">
+    <script type="text/javascript" src="__STATIC__/uploadify/jquery.uploadify.min.js"></script>
+    <script>
+		$('#anonymous').click(function () {
+			var anonymous=document.getElementById("anonymous");
+			if(anonymous.checked)
+			{
+				anonymous.value=1;
+			}
+			else
+			{
+				anonymous.value=0;
+			}
+		});
+    </script>
+
+</block>
